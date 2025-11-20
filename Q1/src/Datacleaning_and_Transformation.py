@@ -9,6 +9,7 @@ import seaborn as sns
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 reports_dir = os.path.join(script_dir, "..", 'reports')
+data_dir = os.path.join(script_dir, "..", 'Data')
 if not os.path.exists(reports_dir):
     os.makedirs(reports_dir)
 
@@ -298,5 +299,12 @@ with open(os.path.join(reports_dir, 'report.txt'), 'a') as f:
     f.write("--------------------------------\n")
 
 
+# Export the dataframe to a csv file
+df.to_csv(os.path.join(data_dir, 'cleaned_data.csv'), index=False)
 
+with open(os.path.join(log_dir, 'log.txt'), 'a') as f:
+    f.write("--------------------------------\n")
+    f.write("Here we had exported the dataframe to a csv file\n")
+    f.write("--------------------------------\n")
+    f.write(df.head().to_string())
 #

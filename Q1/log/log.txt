@@ -21,7 +21,8 @@ New_Price            5031
 Price                   0
 Engine                  0
 Model                   0
-Brand                   0--------------------------------
+Brand                   0
+--------------------------------
 --------------------------------
 Here we had cleaned the mileage column and filled the missing values with the median value
 --------------------------------
@@ -46,7 +47,8 @@ Engine                  0
 Model                   0
 Brand                   0
 Mileage_Unit            0
-Mileage_Clean           0--------------------------------
+Mileage_Clean           0
+--------------------------------
 --------------------------------
 Here we had cleaned the new price column and filled the missing values with the median value
 --------------------------------
@@ -56,7 +58,8 @@ Here we had cleaned the new price column and filled the missing values with the 
 2                 Maruti Ertiga VDI     Chennai  2012              87000    Diesel       Manual      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77
 3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670    Diesel    Automatic     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20
 4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08--------------------------------
-Null values in the dataframe after doing the new price cleaning and transformationName                 0
+Null values in the dataframe after doing the new price cleaning and transformation
+Name                 0
 Location             0
 Year                 0
 Kilometers_Driven    0
@@ -71,4 +74,284 @@ Engine               0
 Model                0
 Brand                0
 Mileage_Unit         0
-Mileage_Clean        0--------------------------------
+Mileage_Clean        0
+--------------------------------
+--------------------------------
+Here we had exported the dataframe to a csv file
+--------------------------------
+                               Name    Location  Year  Kilometers_Driven Fuel_Type Transmission Owner_Type   Power  Seats  New_Price  Price  Engine          Model    Brand Mileage_Unit  Mileage_Clean
+0  Hyundai Creta 1.6 CRDi SX Option        Pune  2015              41000    Diesel       Manual      First  126.20    5.0  1621000.0  12.50     1.6  Hyundai Creta  Hyundai         kmpl          19.67
+1                      Honda Jazz V     Chennai  2011              46000    Petrol       Manual      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg          13.00
+2                 Maruti Ertiga VDI     Chennai  2012              87000    Diesel       Manual      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77
+3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670    Diesel    Automatic     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20
+4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08--------------------------------
+Here we had done the one hot encoding for the Fuel_Type and Transmission columns
+--------------------------------
+                               Name    Location  Year  Kilometers_Driven Owner_Type   Power  Seats  New_Price  Price  Engine          Model    Brand Mileage_Unit  Mileage_Clean  Fuel_Type_Diesel  Fuel_Type_Petrol  Transmission_Automatic  Transmission_Manual
+0  Hyundai Creta 1.6 CRDi SX Option        Pune  2015              41000      First  126.20    5.0  1621000.0  12.50     1.6  Hyundai Creta  Hyundai         kmpl          19.67              True             False                   False                 True
+1                      Honda Jazz V     Chennai  2011              46000      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg          13.00             False              True                   False                 True
+2                 Maruti Ertiga VDI     Chennai  2012              87000      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77              True             False                   False                 True
+3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20              True             False                    True                False
+4            Nissan Micra Diesel XV      Jaipur  2013              86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08              True             False                   False                 True
+--------------------------------
+Here we had added the Car_Age column
+--------------------------------
+                               Name    Location  Year  Kilometers_Driven Owner_Type   Power  Seats  New_Price  Price  Engine          Model    Brand Mileage_Unit  Mileage_Clean  Fuel_Type_Diesel  Fuel_Type_Petrol  Transmission_Automatic  Transmission_Manual  Car_Age
+0  Hyundai Creta 1.6 CRDi SX Option        Pune  2015              41000      First  126.20    5.0  1621000.0  12.50     1.6  Hyundai Creta  Hyundai         kmpl          19.67              True             False                   False                 True       10
+1                      Honda Jazz V     Chennai  2011              46000      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg          13.00             False              True                   False                 True       14
+2                 Maruti Ertiga VDI     Chennai  2012              87000      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77              True             False                   False                 True       13
+3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20              True             False                    True                False       12
+4            Nissan Micra Diesel XV      Jaipur  2013              86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08              True             False                   False                 True       12--------------------------------
+--------------------------------
+Here we had selected the columns Name, Year, Fuel_Type_Diesel, Fuel_Type_Petrol, Price
+--------------------------------
+                               Name  Year  Fuel_Type_Diesel  Fuel_Type_Petrol  Price
+0  Hyundai Creta 1.6 CRDi SX Option  2015              True             False  12.50
+1                      Honda Jazz V  2011             False              True   4.50
+2                 Maruti Ertiga VDI  2012              True             False   6.00
+3   Audi A4 New 2.0 TDI Multitronic  2013              True             False  17.74
+4            Nissan Micra Diesel XV  2013              True             False   3.50--------------------------------
+--------------------------------
+Here we had filtered the dataframe where Year is greater than 2015
+--------------------------------
+                                 Name Location  Year  Kilometers_Driven Owner_Type   Power  Seats  New_Price  Price  Engine          Model   Brand Mileage_Unit  Mileage_Clean  Fuel_Type_Diesel  Fuel_Type_Petrol  Transmission_Automatic  Transmission_Manual  Car_Age
+5   Toyota Innova Crysta 2.8 GX AT 8S   Mumbai  2016              36000      First  171.50    8.0  2100000.0  17.50     2.8  Toyota Innova  Toyota         kmpl          11.36              True             False                    True                False        9
+8                    Maruti Ciaz Zeta    Kochi  2018              25692      First  103.25    5.0  1065000.0   9.95     1.5    Maruti Ciaz  Maruti         kmpl          21.56             False              True                   False                 True        7
+14              Honda Amaze S i-Dtech    Kochi  2016              58950      First   98.60    5.0   854000.0   5.40     1.5    Honda Amaze   Honda         kmpl          25.80              True             False                   False                 True        9
+15              Maruti Swift DDiS VDI   Jaipur  2017              25000      First   74.00    5.0   792000.0   5.99     1.2   Maruti Swift  Maruti         kmpl          28.40              True             False                   False                 True        8
+26                Honda WRV i-VTEC VX    Kochi  2018              37430      First   88.70    5.0  1057000.0   9.90     1.2      Honda WRV   Honda         kmpl          17.50             False              True                   False                 True        7--------------------------------
+--------------------------------
+Here we had filtered the dataframe where Fuel_Type is Diesel
+--------------------------------
+                                Name    Location  Year  Kilometers_Driven Owner_Type   Power  Seats  New_Price  Price  Engine          Model    Brand Mileage_Unit  Mileage_Clean  Fuel_Type_Diesel  Fuel_Type_Petrol  Transmission_Automatic  Transmission_Manual  Car_Age
+0   Hyundai Creta 1.6 CRDi SX Option        Pune  2015              41000      First  126.20    5.0  1621000.0  12.50     1.6  Hyundai Creta  Hyundai         kmpl          19.67              True             False                   False                 True       10
+2                  Maruti Ertiga VDI     Chennai  2012              87000      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77              True             False                   False                 True       13
+3    Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20              True             False                    True                False       12
+4             Nissan Micra Diesel XV      Jaipur  2013              86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08              True             False                   False                 True       12
+5  Toyota Innova Crysta 2.8 GX AT 8S      Mumbai  2016              36000      First  171.50    8.0  2100000.0  17.50     2.8  Toyota Innova   Toyota         kmpl          11.36              True             False                    True                False        9--------------------------------
+--------------------------------
+Here we had renamed the columns Kilometers_Driven to KM_Driven, New_Price to NewPrice, Mileage_Clean to Mileage
+--------------------------------
+                               Name    Location  Year  KM_Driven Owner_Type   Power  Seats   NewPrice  Price  Engine          Model    Brand Mileage_Unit  Mileage  Fuel_Type_Diesel  Fuel_Type_Petrol  Transmission_Automatic  Transmission_Manual  Car_Age
+0  Hyundai Creta 1.6 CRDi SX Option        Pune  2015      41000      First  126.20    5.0  1621000.0  12.50     1.6  Hyundai Creta  Hyundai         kmpl    19.67              True             False                   False                 True       10
+1                      Honda Jazz V     Chennai  2011      46000      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg    13.00             False              True                   False                 True       14
+2                 Maruti Ertiga VDI     Chennai  2012      87000      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl    20.77              True             False                   False                 True       13
+3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013      40670     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl    15.20              True             False                    True                False       12
+4            Nissan Micra Diesel XV      Jaipur  2013      86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl    23.08              True             False                   False                 True       12--------------------------------
+--------------------------------
+Here we had grouped by Model and got the average Price, Mileage, Power and count of the cars
+--------------------------------
+                       Model   Avg_Price  Avg_Mileage   Avg_Power  Count
+0         Ambassador Classic    1.350000    12.800000   35.500000      1
+1                    Audi A3   19.287500    20.380000  143.000000      4
+2                    Audi A4   18.402208    16.477532  163.634416     77
+3                    Audi A6   22.058163    16.581837  186.290000     49
+4                    Audi A7   27.230000     9.600000  241.400000      3
+5                    Audi A8   29.250000    11.800000  246.700000      2
+6                    Audi Q3   22.811852    16.109259  173.257778     27
+7                    Audi Q5   31.447333    13.416333  188.670000     30
+8                    Audi Q7   41.185526    12.136053  256.815789     38
+9                   Audi RS5   38.750000    11.050000  444.000000      2
+10                   Audi TT   30.616667    11.376667  214.066667      3
+11                     BMW 1   16.740000    20.580000  143.000000      3
+12                     BMW 3   18.138469    18.143776  186.627347     98
+13                     BMW 5   24.836324    17.442059  207.830588     68
+14                     BMW 6   45.737143    12.505714  352.142857      7
+15                     BMW 7   40.076154    14.470000  283.998462     13
+16                    BMW X1   19.845312    17.465312  183.718750     32
+17                    BMW X3   31.680714    17.390714  197.571429     14
+18                    BMW X5   38.205417    13.961250  250.500000     24
+19                    BMW X6   49.676667    12.756667  274.310000      6
+20                    BMW Z4   44.270000    10.370000  306.000000      2
+21       Bentley Continental   59.000000     8.600000  552.000000      1
+22            Chevrolet Aveo    1.412143    14.774286   84.621429     14
+23            Chevrolet Beat    2.360217    21.687826   68.967391     46
+24         Chevrolet Captiva    3.750000    12.000000  147.900000      2
+25           Chevrolet Cruze    6.278889    17.143333  156.677778     18
+26           Chevrolet Enjoy    4.213333    16.700000   82.116667      9
+27           Chevrolet Optra    2.521818    15.118182  112.409091     11
+28            Chevrolet Sail    3.233750    19.175000   80.700000      8
+29           Chevrolet Spark    1.624000    17.640000   62.020000     10
+30          Chevrolet Tavera    5.125000    14.190000   79.000000      2
+31                 Datsun GO    3.081667    20.296667   67.020000      6
+32               Datsun Redi    3.100000    22.700000   53.000000      1
+33            Datsun redi-GO    3.008333    22.700000   53.533333      6
+34            Fiat Avventura    6.177500    20.500000   91.720000      4
+35               Fiat Grande    2.762000    17.920000   76.340000      5
+36                Fiat Linea    3.229167    18.116667   93.500000     12
+37                Fiat Punto    2.574000    16.400000   75.100000      5
+38                 Force One    9.333333    17.000000  139.030000      3
+39               Ford Aspire    6.837500    26.100000   99.000000      4
+40              Ford Classic    3.000000    19.680000   67.000000      1
+41             Ford EcoSport    7.999048    19.921190  107.345238     42
+42             Ford Ecosport    6.775283    21.466792   95.120189     53
+43            Ford Endeavour   20.201081    11.812162  169.181081     37
+44               Ford Fiesta    2.712973    18.157027   74.274324     37
+45                 Ford Figo    3.718119    19.435446   76.110297    101
+46            Ford Freestyle    6.856667    19.000000   94.680000      3
+47               Ford Fusion    3.000000    17.700000   68.000000      1
+48                 Ford Ikon    1.336667    13.853333   72.533333     15
+49              Ford Mustang   56.800000    13.000000  395.000000      1
+50              Honda Accord    4.790385    11.307692  171.569231     26
+51               Honda Amaze    4.749717    22.054717   92.973396    106
+52                Honda BR-V    9.103333    17.566667  111.066667      3
+53                 Honda BRV    9.146000    15.880000  117.300000      5
+54                Honda Brio    3.774333    18.661667   86.800000     60
+55                Honda CR-V    7.840385    11.888462  153.697692     26
+56                Honda City    5.768519    18.215556  110.778148    270
+57               Honda Civic    3.331250    13.606250  130.046875     32
+58                Honda Jazz    6.039828    20.381034   91.203448     58
+59             Honda Mobilio    5.657500    22.100000  104.443750     16
+60                Honda WR-V    8.200000    17.500000   88.700000      1
+61                 Honda WRV    9.085000    17.500000   88.700000      4
+62            Hyundai Accent    1.555882    13.444706   92.570588     17
+63             Hyundai Creta   12.177634    17.559247  121.831183     93
+64               Hyundai EON    3.077167    21.118333   55.618333     60
+65           Hyundai Elantra    9.413636    19.938636  130.862727     22
+66             Hyundai Elite    7.257143    18.881429   82.352857     14
+67              Hyundai Getz    1.455000    15.520000   83.490000     10
+68             Hyundai Grand    5.069145    20.242105   79.016974    152
+69             Hyundai Santa   13.748824    13.191765  194.300000     17
+70            Hyundai Santro    2.014545    11.420000   62.257576     33
+71            Hyundai Sonata    6.383333    12.368333  158.083333      6
+72            Hyundai Tucson   11.622500    13.632500  139.970000      4
+73             Hyundai Verna    5.951941    19.402059  120.294353    170
+74             Hyundai Xcent    4.705965    21.707018   76.877368     57
+75               Hyundai i10    2.990065    19.736323   75.927742    155
+76               Hyundai i20    5.092146    19.542389   84.459312    247
+77               ISUZU D-MAX   12.045000    12.400000  134.000000      2
+78                 Isuzu MUX   20.000000    13.800000  174.570000      1
+79                  Jaguar F  100.000000    12.500000  488.100000      1
+80                 Jaguar XE   37.500000    13.566667  200.246667      3
+81                 Jaguar XF   30.313333    15.811000  220.623333     30
+82                 Jaguar XJ   63.898333    11.783333  309.245000      6
+83              Jeep Compass   18.718667    16.760000  169.333333     15
+84      Lamborghini Gallardo  120.000000     6.400000  560.000000      1
+85                Land Rover   39.259500    10.959167  191.750333     60
+86           Mahindra Bolero    5.072857    14.987143   63.050000     14
+87              Mahindra KUV    5.085000    21.222857   79.857143     14
+88            Mahindra Logan    1.750000    17.450000   70.000000      2
+89        Mahindra NuvoSport    7.120000    17.450000  100.000000      3
+90           Mahindra Quanto    3.588000    17.210000  100.000000      5
+91          Mahindra Renault    2.300000    17.450000   70.000000      2
+92          Mahindra Scorpio    6.789016    12.776393  119.095082     61
+93        Mahindra Ssangyong   11.183846    11.560769  178.923077     13
+94              Mahindra TUV    7.872222    18.490000  100.000000      9
+95             Mahindra Thar    8.688333    17.053333   91.000000      6
+96           Mahindra Verito    3.097500    21.015000   64.550000      4
+97           Mahindra XUV300    7.250000    20.000000  115.000000      1
+98           Mahindra XUV500   10.353805    15.550442  140.265487    113
+99             Mahindra Xylo    4.670000    13.832381  106.861905     21
+100               Maruti 800    0.765833    16.100000   37.000000     12
+101            Maruti A-Star    2.365294    18.643529   66.100000     17
+102              Maruti Alto    2.519478    22.081940   53.335821    134
+103            Maruti Baleno    6.855246    22.356885   83.081967     61
+104           Maruti Celerio    4.118393    23.422857   65.608571     56
+105              Maruti Ciaz    7.648310    24.249577   90.603521     71
+106             Maruti Dzire    6.249167    26.724583   75.772917     24
+107              Maruti Eeco    3.475000    15.100000   73.000000     12
+108            Maruti Ertiga    6.936056    21.041831   89.833521     71
+109            Maruti Esteem    1.100000    15.900000   85.000000      2
+110             Maruti Grand    7.047500    10.075000  163.500000      4
+111             Maruti Ignis    6.148333    21.875000   80.500000      6
+112              Maruti Omni    2.353000    16.120000   34.720000     20
+113              Maruti Ritz    3.611250    21.150938   78.190313     64
+114                 Maruti S    7.862857    22.007143  101.142857      7
+115           Maruti S-Cross    7.950000    25.100000   88.500000      3
+116               Maruti SX4    4.310294    18.251765  101.870294     34
+117             Maruti Swift    4.697448    21.686914   78.116647    337
+118             Maruti Versa    1.250000    11.300000   83.100000      1
+119            Maruti Vitara    9.132791    24.300000   88.500000     43
+120             Maruti Wagon    2.780317    19.613016   67.448730    126
+121               Maruti Zen    1.363333    17.822222   62.844444     27
+122          Mercedes-Benz A   15.885000    18.875000  114.400000      8
+123          Mercedes-Benz B   14.513333    14.883333  115.116667     12
+124    Mercedes-Benz C-Class   36.723333     0.000000  194.000000      3
+125        Mercedes-Benz CLA   27.830769    17.240000  146.846154     13
+126  Mercedes-Benz CLS-Class   32.000000     9.900000  271.720000      1
+127    Mercedes-Benz E-Class   24.701163    12.557558  204.429186     86
+128   Mercedes-Benz GL-Class   43.204545    11.745455  235.200000     11
+129        Mercedes-Benz GLA   23.410000    17.200000  143.833333     18
+130        Mercedes-Benz GLC   48.585000    17.100000  194.375000      8
+131        Mercedes-Benz GLE   60.444167    13.680000  236.910000     12
+132        Mercedes-Benz GLS   67.500000    11.000000  258.000000      2
+133    Mercedes-Benz M-Class   30.417391     8.473043  202.113913     23
+134        Mercedes-Benz New   20.916702    15.555000  174.932128     94
+135    Mercedes-Benz R-Class   20.882500    11.800000  269.250000      4
+136          Mercedes-Benz S   24.215000    11.820000  300.560000     10
+137    Mercedes-Benz S-Class   14.288000    13.100000  224.322000      5
+138   Mercedes-Benz SL-Class   29.500000     8.100000  387.300000      1
+139        Mercedes-Benz SLC   68.980000    19.000000  362.070000      2
+140  Mercedes-Benz SLK-Class   66.846667    16.066667  344.333333      3
+141             Mini Clubman   35.000000    13.800000  192.000000      1
+142              Mini Cooper   26.721667    18.876667  147.058333     24
+143          Mini Countryman   23.000000    16.600000  112.000000      1
+144         Mitsubishi Cedia    3.425000    13.170000  114.000000      2
+145        Mitsubishi Lancer    2.000000    14.250000   76.900000      2
+146       Mitsubishi Montero    7.500000    11.560000  199.300000      1
+147     Mitsubishi Outlander    7.390000    11.300000  170.000000      2
+148        Mitsubishi Pajero   13.273000    11.900000  143.127000     20
+149            Nissan Evalia    3.900000    19.300000   84.800000      1
+150             Nissan Micra    3.381250    20.653437   68.607500     32
+151             Nissan Sunny    4.571154    19.657308   90.965385     26
+152             Nissan Teana    8.250000    11.070000  179.500000      1
+153           Nissan Terrano    6.334231    18.546923   99.900769     26
+154           Nissan X-Trail    7.316667    12.776667  147.600000      3
+155          Porsche Boxster   64.000000     8.600000  265.000000      1
+156          Porsche Cayenne   35.770000    13.392857  356.714286      7
+157         Porsche Panamera   59.110000    15.366250  317.325000      8
+158           Renault Captur   13.626667    20.370000  108.450000      3
+159           Renault Duster    6.756988    19.313012   98.662048     83
+160          Renault Fluence    4.087500    19.350000   99.900000      4
+161             Renault KWID    3.560750    24.358750   57.410000     40
+162           Renault Koleos    8.000000    13.730000  148.000000      3
+163            Renault Lodgy    7.590000    19.980000  108.500000      2
+164            Renault Pulse    4.078000    21.072000   67.850000      5
+165            Renault Scala    4.160000    19.968000   90.320000      5
+166              Skoda Fabia    2.386364    17.435455   77.072727     11
+167              Skoda Laura    5.160357    17.653571  122.625000     28
+168            Skoda Octavia    9.281935    18.114516  122.456129     31
+169              Skoda Rapid    6.393404    18.229574  103.938723     47
+170             Skoda Superb   10.222857    13.777347  165.235918     49
+171               Skoda Yeti    7.496667    17.695000  123.286667      6
+172                Tata Bolt    4.737500    21.605000   77.675000      4
+173                Tata Hexa   14.400000    17.600000  153.860000      4
+174              Tata Indica    2.073514    20.503784   67.681351     37
+175              Tata Indigo    2.047586    18.988966   69.311034     29
+176               Tata Manza    2.478750    19.450000   89.172500     16
+177                Tata Nano    1.888400    24.536000   37.090400     25
+178                 Tata New    3.275000    13.393750  136.650000      8
+179               Tata Nexon    9.580000    20.000000  108.500000      3
+180              Tata Safari    7.962222    14.006667  140.951111      9
+181                Tata Sumo    4.268000    14.562000   83.380000      5
+182               Tata Tiago    5.284545    24.152727   82.605455     11
+183               Tata Tigor    6.280000    22.940000   75.000000      5
+184             Tata Venture    2.500000    15.420000   70.000000      1
+185               Tata Xenon    5.633333    13.490000  138.030000      3
+186                Tata Zest    4.615714    19.402857   85.204762     21
+187             Toyota Camry   18.794545    16.672727  163.351818     11
+188           Toyota Corolla    7.038209    15.408507  126.500597     67
+189             Toyota Etios    4.630833    20.251042   76.704375     48
+190          Toyota Fortuner   17.874752    12.420000  170.152475    101
+191            Toyota Innova   12.025976    12.764085  118.434146    164
+192          Toyota Platinum    6.000000    23.590000   67.050000      1
+193            Toyota Qualis    3.575000    13.100000   75.000000      2
+194          Volkswagen Ameo    6.237368    18.507368   84.774737     19
+195        Volkswagen Beetle   15.950000    10.980000  114.400000      1
+196     Volkswagen CrossPolo    5.570000    20.140000   88.615000      4
+197         Volkswagen Jetta    8.372609    16.760000  125.786957     23
+198        Volkswagen Passat    6.256250    16.818750  159.812500      8
+199          Volkswagen Polo    4.461325    18.586689   80.730464    151
+200        Volkswagen Tiguan   24.900000    17.060000  141.000000      1
+201         Volkswagen Vento    5.312336    18.361589  104.153271    107
+202                Volvo S60   19.501429    16.108571  185.857143      7
+203                Volvo S80    9.120000    14.550000  215.000000      2
+204                Volvo V40   20.500000    20.050000  150.000000      4
+205               Volvo XC60   18.480000    13.516667  200.666667      6
+206               Volvo XC90   23.615000    11.100000  200.000000      2--------------------------------
+--------------------------------
+Here we had grouped by Fuel_Type and got the average Mileage
+--------------------------------
+   Fuel_Type_Diesel  Avg_Mileage
+0             False    17.576509
+1              True    18.652661--------------------------------
