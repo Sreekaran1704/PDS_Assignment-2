@@ -80,7 +80,7 @@ with open(os.path.join(log_dir, 'log.txt'), 'a') as f:
     f.write("\n")
     f.write("--------------------------------\n")
 
-with open(os.path.join(reports_dir, 'report.txt'), 'w') as f:
+with open(os.path.join(reports_dir, 'report.md'), 'w') as f:
     f.write("--------------------------------\n")
     f.write("Engine model was first derived from Engine CC for accuracy, then extracted from the Name string when CC was missing. Remaining gaps were filled using model-level and brand-level medians because they best represent real engine patterns while avoiding outlier distortion. Median ensures stable, realistic imputation compared to mean or mode.")
     f.write("\n")
@@ -126,7 +126,7 @@ with open(os.path.join(log_dir, 'log.txt'), 'a') as f:
     f.write(df.isnull().sum().to_string())
     f.write("--------------------------------\n")
 
-with open(os.path.join(reports_dir, 'report.txt'), 'a') as f:
+with open(os.path.join(reports_dir, 'report.md'), 'a') as f:
     f.write("--------------------------------\n")
     f.write("Power values were cleaned by extracting numeric bhp. Missing values were filled hierarchically: first using Model–Engine–Fuel groups, then Model–Engine, then Engine alone, and finally Brand medians because this preserves realistic horsepower patterns across variants. Median was chosen to avoid distortion from extreme high-bhp outliers.")
     f.write("\n")
@@ -154,7 +154,7 @@ with open(os.path.join(log_dir, 'log.txt'), 'a') as f:
     f.write("\n")
     f.write("--------------------------------\n")
 
-with open(os.path.join(reports_dir, 'report.txt'), 'a') as f:
+with open(os.path.join(reports_dir, 'report.md'), 'a') as f:
     f.write("--------------------------------\n")
     f.write("Seats were filled using model-level medians because cars of the same model almost always have identical seating capacity. Brand-level medians were used next since manufacturers follow consistent design patterns. Median avoids distortion from rare variants. Remaining missing values were set to 5, the most common seating capacity in the dataset.”")
     f.write("\n")
@@ -175,7 +175,7 @@ with open(os.path.join(log_dir, 'log.txt'), 'w') as f:
     f.write("\n")
     f.write("--------------------------------\n")
 
-with open(os.path.join(reports_dir, 'report.txt'), 'a') as f:
+with open(os.path.join(reports_dir, 'report.md'), 'a') as f:
     f.write("--------------------------------\n")
     f.write("Rows with missing mileage were removed because only two entries lacked this information, making imputation unreliable. With such a small count, filling values could introduce noise or distort patterns. Dropping them preserves dataset integrity, avoids artificial values, and has no meaningful impact on model performance due to minimal loss.")
     f.write("\n")   
@@ -244,7 +244,7 @@ with open(os.path.join(log_dir, 'log.txt'), 'a') as f:
     f.write("\n")
     f.write("--------------------------------\n")
 
-with open(os.path.join(reports_dir, 'report.txt'), 'a') as f:
+with open(os.path.join(reports_dir, 'report.md'), 'a') as f:
     f.write("------------------------------------------------------------------------------------------------\n")
     f.write("Mileage required separate handling because kmpl (liquid fuels) and km/kg (CNG) represent different units and cannot be directly compared. Group-based median imputation preserves realistic mileage patterns within each fuel–model combination while avoiding distortion from outliers. Treating CNG and Petrol/Diesel separately prevents incorrect conversions and ensures accurate, unit-aware feature representation.")
     f.write("------------------------------------------------------------------------------------------------\n")
@@ -300,7 +300,7 @@ with open(os.path.join(log_dir, 'log.txt'), 'a') as f:
     f.write("\n")
     f.write("--------------------------------\n")
 
-with open(os.path.join(reports_dir, 'report.txt'), 'a') as f:
+with open(os.path.join(reports_dir, 'report.md'), 'a') as f:
     f.write("--------------------------------\n")
     f.write("New_Price was first converted into numeric rupee values by handling ‘Lakh’ and ‘Crore’ units to standardize price scale. Missing values were filled using medians within Model–Engine–Year groups, then broader groups, because cars of similar model and engine share realistic showroom prices. Median avoids skew from luxury outliers, ensuring stable price estimation.")
     f.write("\n")
