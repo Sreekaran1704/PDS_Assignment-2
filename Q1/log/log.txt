@@ -6,7 +6,8 @@ Here we had dropped the rows where mileage is null
 1                      Honda Jazz V     Chennai  2011              46000    Petrol       Manual      First    13 km/kg   88.70    5.0  8.61 Lakh   4.50     1.2     Honda Jazz    Honda
 2                 Maruti Ertiga VDI     Chennai  2012              87000    Diesel       Manual      First  20.77 kmpl   88.76    7.0        NaN   6.00     1.2  Maruti Ertiga   Maruti
 3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670    Diesel    Automatic     Second   15.2 kmpl  140.80    5.0        NaN  17.74     2.0        Audi A4     Audi
-4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First  23.08 kmpl   63.10    5.0        NaN   3.50     1.5   Nissan Micra   Nissan--------------------------------
+4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First  23.08 kmpl   63.10    5.0        NaN   3.50     1.5   Nissan Micra   Nissan
+--------------------------------
 Null values in the dataframe after dropping the rows where mileage is nullName                    0
 Location                0
 Year                    0
@@ -31,7 +32,8 @@ Here we had cleaned the mileage column and filled the missing values with the me
 1                      Honda Jazz V     Chennai  2011              46000    Petrol       Manual      First   88.70    5.0  8.61 Lakh   4.50     1.2     Honda Jazz    Honda        km/kg          13.00
 2                 Maruti Ertiga VDI     Chennai  2012              87000    Diesel       Manual      First   88.76    7.0        NaN   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77
 3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670    Diesel    Automatic     Second  140.80    5.0        NaN  17.74     2.0        Audi A4     Audi         kmpl          15.20
-4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0        NaN   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08--------------------------------
+4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0        NaN   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08
+--------------------------------
 Null values in the dataframe after doing the mileage cleaning and transformationName                    0
 Location                0
 Year                    0
@@ -57,7 +59,8 @@ Here we had cleaned the new price column and filled the missing values with the 
 1                      Honda Jazz V     Chennai  2011              46000    Petrol       Manual      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg          13.00
 2                 Maruti Ertiga VDI     Chennai  2012              87000    Diesel       Manual      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77
 3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670    Diesel    Automatic     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20
-4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08--------------------------------
+4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08
+--------------------------------
 Null values in the dataframe after doing the new price cleaning and transformation
 Name                 0
 Location             0
@@ -84,7 +87,9 @@ Here we had exported the dataframe to a csv file
 1                      Honda Jazz V     Chennai  2011              46000    Petrol       Manual      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg          13.00
 2                 Maruti Ertiga VDI     Chennai  2012              87000    Diesel       Manual      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77
 3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670    Diesel    Automatic     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20
-4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08--------------------------------
+4            Nissan Micra Diesel XV      Jaipur  2013              86999    Diesel       Manual      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08
+--------------------------------
+--------------------------------
 Here we had done the one hot encoding for the Fuel_Type and Transmission columns
 --------------------------------
                                Name    Location  Year  Kilometers_Driven Owner_Type   Power  Seats  New_Price  Price  Engine          Model    Brand Mileage_Unit  Mileage_Clean  Fuel_Type_Diesel  Fuel_Type_Petrol  Transmission_Automatic  Transmission_Manual
@@ -110,7 +115,8 @@ Here we had selected the columns Name, Year, Fuel_Type_Diesel, Fuel_Type_Petrol,
 1                      Honda Jazz V  2011             False              True   4.50
 2                 Maruti Ertiga VDI  2012              True             False   6.00
 3   Audi A4 New 2.0 TDI Multitronic  2013              True             False  17.74
-4            Nissan Micra Diesel XV  2013              True             False   3.50--------------------------------
+4            Nissan Micra Diesel XV  2013              True             False   3.50
+--------------------------------
 --------------------------------
 Here we had filtered the dataframe where Year is greater than 2015
 --------------------------------
@@ -119,7 +125,8 @@ Here we had filtered the dataframe where Year is greater than 2015
 8                    Maruti Ciaz Zeta    Kochi  2018              25692      First  103.25    5.0  1065000.0   9.95     1.5    Maruti Ciaz  Maruti         kmpl          21.56             False              True                   False                 True        7
 14              Honda Amaze S i-Dtech    Kochi  2016              58950      First   98.60    5.0   854000.0   5.40     1.5    Honda Amaze   Honda         kmpl          25.80              True             False                   False                 True        9
 15              Maruti Swift DDiS VDI   Jaipur  2017              25000      First   74.00    5.0   792000.0   5.99     1.2   Maruti Swift  Maruti         kmpl          28.40              True             False                   False                 True        8
-26                Honda WRV i-VTEC VX    Kochi  2018              37430      First   88.70    5.0  1057000.0   9.90     1.2      Honda WRV   Honda         kmpl          17.50             False              True                   False                 True        7--------------------------------
+26                Honda WRV i-VTEC VX    Kochi  2018              37430      First   88.70    5.0  1057000.0   9.90     1.2      Honda WRV   Honda         kmpl          17.50             False              True                   False                 True        7
+--------------------------------
 --------------------------------
 Here we had filtered the dataframe where Fuel_Type is Diesel
 --------------------------------
@@ -128,7 +135,8 @@ Here we had filtered the dataframe where Fuel_Type is Diesel
 2                  Maruti Ertiga VDI     Chennai  2012              87000      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl          20.77              True             False                   False                 True       13
 3    Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013              40670     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl          15.20              True             False                    True                False       12
 4             Nissan Micra Diesel XV      Jaipur  2013              86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl          23.08              True             False                   False                 True       12
-5  Toyota Innova Crysta 2.8 GX AT 8S      Mumbai  2016              36000      First  171.50    8.0  2100000.0  17.50     2.8  Toyota Innova   Toyota         kmpl          11.36              True             False                    True                False        9--------------------------------
+5  Toyota Innova Crysta 2.8 GX AT 8S      Mumbai  2016              36000      First  171.50    8.0  2100000.0  17.50     2.8  Toyota Innova   Toyota         kmpl          11.36              True             False                    True                False        9
+--------------------------------
 --------------------------------
 Here we had renamed the columns Kilometers_Driven to KM_Driven, New_Price to NewPrice, Mileage_Clean to Mileage
 --------------------------------
@@ -137,7 +145,8 @@ Here we had renamed the columns Kilometers_Driven to KM_Driven, New_Price to New
 1                      Honda Jazz V     Chennai  2011      46000      First   88.70    5.0   861000.0   4.50     1.2     Honda Jazz    Honda        km/kg    13.00             False              True                   False                 True       14
 2                 Maruti Ertiga VDI     Chennai  2012      87000      First   88.76    7.0  1144000.0   6.00     1.2  Maruti Ertiga   Maruti         kmpl    20.77              True             False                   False                 True       13
 3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013      40670     Second  140.80    5.0  5314000.0  17.74     2.0        Audi A4     Audi         kmpl    15.20              True             False                    True                False       12
-4            Nissan Micra Diesel XV      Jaipur  2013      86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl    23.08              True             False                   False                 True       12--------------------------------
+4            Nissan Micra Diesel XV      Jaipur  2013      86999      First   63.10    5.0   948000.0   3.50     1.5   Nissan Micra   Nissan         kmpl    23.08              True             False                   False                 True       12
+--------------------------------
 --------------------------------
 Here we had grouped by Model and got the average Price, Mileage, Power and count of the cars
 --------------------------------
@@ -348,10 +357,12 @@ Here we had grouped by Model and got the average Price, Mileage, Power and count
 203                Volvo S80    9.120000    14.550000  215.000000      2
 204                Volvo V40   20.500000    20.050000  150.000000      4
 205               Volvo XC60   18.480000    13.516667  200.666667      6
-206               Volvo XC90   23.615000    11.100000  200.000000      2--------------------------------
+206               Volvo XC90   23.615000    11.100000  200.000000      2
+--------------------------------
 --------------------------------
 Here we had grouped by Fuel_Type and got the average Mileage
 --------------------------------
    Fuel_Type_Diesel  Avg_Mileage
 0             False    17.576509
-1              True    18.652661--------------------------------
+1              True    18.652661
+--------------------------------
